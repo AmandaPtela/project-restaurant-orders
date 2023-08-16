@@ -33,6 +33,11 @@ class MenuBuilder:
 
         for dish in dishes:
             avl = self.inventory.check_recipe_availability(dish.recipe)
+
+            # cardápio completo quando não é passado nenhum parâmetro;
+            # cardápio correto respeitando a restrição alimentar passada
+            # como parâmetro;
+
             if rest not in dish.get_restrictions() and avl == "True":
                 complete_menu.append(
                     {
@@ -42,6 +47,7 @@ class MenuBuilder:
                         "restrictions": dish.get_restrictions()
                     }
                 )
+
             return complete_menu
 
         return dishes
