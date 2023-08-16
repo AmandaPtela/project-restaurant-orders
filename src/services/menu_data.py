@@ -30,8 +30,8 @@ class MenuData:
                 # adiciona os ingredientes
                 dishes[name].add_ingredient_dependency(
                     ingredient, int(amount))
-                # retorna valores do dicionário
-                print(dishes.keys())
+                # retorna o dicionário
+                # print(dishes.keys())
         return set(dishes.values())
     """
 new = MenuData("data/menu_base_data.csv")
