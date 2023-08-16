@@ -29,12 +29,16 @@ class InventoryMapping:
     def check_recipe_availability(self, recipe: Recipe) -> bool:
         inventory = self.inventory
 
+        # print(inventory)
         for ingredient, amount in recipe.items():
 
             if ingredient not in inventory:
+                # Print('INGREDIENTE', ingredient)
+                # Print('INVENTORY', inventory)
                 return False
 
             if amount > inventory[ingredient]:
+                # Print(amount)
                 return False
 
         return True
@@ -45,10 +49,12 @@ class InventoryMapping:
         recipes = recipe.keys()
         inventory = self.inventory
 
+        # Print(avl)
         if avl:
 
             for ingredient in recipes:
+                # Print(inventory[ingredient], recipe[ingredient])
                 inventory[ingredient] -= recipe[ingredient]
-
+                # Print(inventory[ingredient], recipe[ingredient])
         else:
             raise ValueError("Receita indisponível")
