@@ -39,6 +39,7 @@ class MenuBuilder:
             # como parâmetro;
     # arrumar confusão aqui no if
             if avl and rest not in dish.get_restrictions():
+
                 complete_menu.append(
                     {
                         "dish_name": dish.name,

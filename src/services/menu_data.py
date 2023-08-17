@@ -12,8 +12,9 @@ class MenuData:
 
     def dishes(self, path):
         dishes = dict()
+
         with open(path, 'r') as csvv:
-            arquivo = csv.DictReader(csvv)  # lê
+            arquivo = csv.DictReader(csvv)  # lê CSV
 
             for linha in arquivo:
                 name = linha["dish"]
@@ -27,10 +28,12 @@ class MenuData:
                 if name not in dishes:
                     # cria o prato
                     dishes[name] = Dish(name, price_numb)
+
                 # adiciona os ingredientes
                 dishes[name].add_ingredient_dependency(
                     ingredient, int(amount))
                 # retorna o dicionário
+
                 # print(dishes.keys())
         return set(dishes.values())
     """

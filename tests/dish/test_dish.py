@@ -17,6 +17,7 @@ def test_dish():
 
     # 2.1 - o atributo name de um prato diferente que o passado ao construtor.
     assert lasanha.name == 'lasanha'
+
     assert lasanha.recipe == {}
 
     assert lasanha.__hash__() == lasanha.__hash__()
@@ -32,6 +33,7 @@ def test_dish():
             amount=100)
 
     assert lasanha.get_ingredients() == {Ingredient('lasanha')}
+
     assert len(lasanha.get_ingredients()) == len(lasanha.get_ingredients())
 
     assert lasanha.get_restrictions() == set()
@@ -51,7 +53,7 @@ def test_dish():
     with pytest.raises(ValueError, match=message):
         Dish("Beiju", 0)
 
-    print('HASH LASANHA', lasanha.add_ingredient_dependency(
-            ingredient=Ingredient("lasanha"),
-            amount=100))
-    print('INGREDIENT ADD', lasanha.get_ingredients())
+    # print('HASH LASANHA', lasanha.add_ingredient_dependency(
+        # ingredient=Ingredient("lasanha"),
+        # amount=100))
+    # print('INGREDIENT ADD', lasanha.get_ingredients())

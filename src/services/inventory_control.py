@@ -39,6 +39,7 @@ class InventoryMapping:
 
             if amount > inventory[ingredient]:
                 # Print(amount)
+                # Print(inventory[ingredient])
                 return False
 
         return True
@@ -51,7 +52,6 @@ class InventoryMapping:
 
         # Print(avl)
         if avl:
-
             for ingredient in recipes:
                 # Print(inventory[ingredient], recipe[ingredient])
                 inventory[ingredient] -= recipe[ingredient]
