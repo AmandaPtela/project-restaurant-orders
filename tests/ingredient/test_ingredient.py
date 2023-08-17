@@ -11,7 +11,7 @@ def test_ingredient():
     # print(ovo.__hash__)
 
     assert ovo_cozido.__hash__() == ovo_frito.__hash__()
-    assert ovo_cozido == salmao
+    assert ovo_cozido == ovo_frito
     assert ovo_cozido.__hash__() != bacon.__hash__()
 
     assert salmao.__repr__() == "Ingredient('salmão')"
