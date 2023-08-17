@@ -13,7 +13,9 @@ def test_ingredient():
     assert ovo_cozido.__hash__() == ovo_frito.__hash__()
     assert ovo_cozido == ovo_frito
     assert ovo_cozido.__hash__() != bacon.__hash__()
+
     assert salmao.__repr__() == "Ingredient('salmão')"
+
     assert bacon.name == 'bacon'
     assert bacon.restrictions == {
         Restriction.ANIMAL_DERIVED, Restriction.ANIMAL_MEAT
