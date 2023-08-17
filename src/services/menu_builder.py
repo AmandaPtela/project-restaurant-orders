@@ -37,19 +37,16 @@ class MenuBuilder:
             # cardápio completo quando não é passado nenhum parâmetro;
             # cardápio correto respeitando a restrição alimentar passada
             # como parâmetro;
-
-            if rest not in dish.get_restrictions() and avl == "True":
+    # arrumar confusão aqui no if
+            if avl and rest not in dish.get_restrictions():
                 complete_menu.append(
                     {
                         "dish_name": dish.name,
-                        "ingredients": dish.recipe.keys(),
+                        "ingredients": dish.get_ingredients(),
                         "price": dish.price,
-                        "restrictions": dish.get_restrictions()
+                        "restrictions": dish.get_restrictions(),
                     }
                 )
-
-            return complete_menu
-
-        return dishes
+        return complete_menu
         # lista de dicionários que contenham as chaves dish_name,
         # ingredients, price e restrictions.
